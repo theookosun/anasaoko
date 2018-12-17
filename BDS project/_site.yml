@@ -1,0 +1,25 @@
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "My Website"
+  left:
+    - text: "Introduction"
+      href: index.html
+    - text: "Litreature Review"
+      href: about.html
+    - text: "Methodology"
+      href: method.html
+    - text: "Interpretation of Analysis"
+      href: analysis.html
+    - text: "Conclusion and References"
+      href: ref.html
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+    
+output_dir: "."
+    

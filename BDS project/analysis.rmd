@@ -1,0 +1,39 @@
+---
+title: "Interpretation of Analysis"
+---
+
+## Hypothesis I
+For the first part, when we regress education on democracy, we do not get a statistically significant result. Although this does not mean the relationship is not practically significant, it means that the effect is not detected through our analysis. One reason this relationship might not be statistically significant is because there are other factors that will affect the level of democracy within a country such as political stability, political history of a country and the effectiveness of checks and balance within the system. However,when we regress economic stability on education, we find that this relationship is statistically significant. This strengthens the argument that economic stability will be determined by the level of education in a country. In reality, this relationship is bidirectional and will have many confounders like population demographic, quality of basic amenities, access to basic infrastructure and amenities.
+
+Interestingly, regressing gender inequality in education (measured by V52- “a university education is more important for a boy than a girl) on economic stability, the relationship is statistically significant. This buttresses the argument for gender equality within the educational institutions because as gender inequality i.e. girls and boys are permitted and encouraged to gain higher education that will have a positive effect on the economic stability of the country because of the greater levels of discretionary income to take care of household needs and children.
+```{r}
+summary(lm(stableco~education), data = WVS)
+summary(lm(education~democracy), data = WVS)
+summary(lm(stableco~education+democracy), data = WVS)
+summary(lm(educunequal~stableco), data = WVS)
+```
+
+## Hypothesis II 
+
+From Beer’s study, we inferred that there is a link between democracy and labor force participation because through voting, women are able to advance their interests through voting. We regressed the gender inequality in the political field on the level of educational attainment in the country. The results were statistically significant, and this is in line with the current literature that asserts the link between education and gender inequality in the political field. The results were also significant for gender inequality in the political field and democracy. Amongst other reasons, one reason, might be the lack of advancement of interests through voting. 
+
+```{r}
+summary(lm(politunequal~democracy), data = WVS)
+summary(lm(politunequal~education), data = WVS)
+summary(lm(politunequal~educunequal), data = WVS)
+summary(lm(politunequal~democracy + education + educunequal), data = WVS)
+```
+
+
+## Hypothesis III
+
+Potts (2016) posits that it is the element of choice that makes people happy in liberal democracies. The equal choice offered to citizens in terms of participating in the political, social, education and employment institutions regardless of gender can have an association with the level of happiness that an individual in that country. 
+
+For this hypothesis, we used the dependent variable happiness (measured by V10 - feeling of happiness) and then the independent variables of gender inequality in the political field and gender inequality in the education. The results of the regression were statistically significant which reinforces the importance of gender equality in the educational and political field. 
+
+```{r}
+summary(lm(happy~educunequal), data = WVS)
+summary(lm(happy~politunequal), data = WVS)
+summary(lm(happy~educunequal+politunequal), data = WVS)
+
+```
