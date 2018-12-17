@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Interpretation of Analysis</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introduction</a>
+</li>
+<li>
+  <a href="about.html">Litreature Review</a>
+</li>
+<li>
+  <a href="method.html">Methodology</a>
+</li>
+<li>
+  <a href="analysis.html">Interpretation of Analysis</a>
+</li>
+<li>
+  <a href="ref.html">Conclusion and References</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Interpretation of Analysis</h1>
+
+</div>
+
+
+<div id="hypothesis-i" class="section level2">
+<h2>Hypothesis I</h2>
+<p>For the first part, when we regress education on democracy, we do not get a statistically significant result. Although this does not mean the relationship is not practically significant, it means that the effect is not detected through our analysis. One reason this relationship might not be statistically significant is because there are other factors that will affect the level of democracy within a country such as political stability, political history of a country and the effectiveness of checks and balance within the system. However,when we regress economic stability on education, we find that this relationship is statistically significant. This strengthens the argument that economic stability will be determined by the level of education in a country. In reality, this relationship is bidirectional and will have many confounders like population demographic, quality of basic amenities, access to basic infrastructure and amenities.</p>
+<p>Interestingly, regressing gender inequality in education (measured by V52- “a university education is more important for a boy than a girl) on economic stability, the relationship is statistically significant. This buttresses the argument for gender equality within the educational institutions because as gender inequality i.e. girls and boys are permitted and encouraged to gain higher education that will have a positive effect on the economic stability of the country because of the greater levels of discretionary income to take care of household needs and children.</p>
+<pre class="r"><code>summary(lm(stableco~education), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = stableco ~ education)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.6224 -0.4593  0.4320  0.5951  0.8127 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 3.132935   0.007413   422.6   &lt;2e-16 ***
+## education   0.054387   0.001206    45.1   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.8629 on 87509 degrees of freedom
+##   (2054 observations deleted due to missingness)
+## Multiple R-squared:  0.02272,    Adjusted R-squared:  0.02271 
+## F-statistic:  2034 on 1 and 87509 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>summary(lm(education~democracy), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = education ~ democracy)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.6787 -1.6686  0.3213  2.3213  3.3670 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 5.627946   0.021673 259.674   &lt;2e-16 ***
+## democracy   0.005080   0.003331   1.525    0.127    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.417 on 81866 degrees of freedom
+##   (7697 observations deleted due to missingness)
+## Multiple R-squared:  2.842e-05,  Adjusted R-squared:  1.62e-05 
+## F-statistic: 2.327 on 1 and 81866 DF,  p-value: 0.1272</code></pre>
+<pre class="r"><code>summary(lm(stableco~education+democracy), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = stableco ~ education + democracy)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.7273 -0.4461  0.4201  0.5993  0.9735 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  2.94256    0.01054  279.07   &lt;2e-16 ***
+## education    0.05444    0.00126   43.21   &lt;2e-16 ***
+## democracy    0.02949    0.00120   24.57   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.8666 on 80998 degrees of freedom
+##   (8564 observations deleted due to missingness)
+## Multiple R-squared:  0.02973,    Adjusted R-squared:  0.02971 
+## F-statistic:  1241 on 2 and 80998 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>summary(lm(educunequal~stableco), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = educunequal ~ stableco)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.03166 -0.55215 -0.03166  0.96834  1.44785 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 2.392308   0.012886  185.65   &lt;2e-16 ***
+## stableco    0.159839   0.003627   44.06   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9259 on 85894 degrees of freedom
+##   (3669 observations deleted due to missingness)
+## Multiple R-squared:  0.02211,    Adjusted R-squared:  0.02209 
+## F-statistic:  1942 on 1 and 85894 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="hypothesis-ii" class="section level2">
+<h2>Hypothesis II</h2>
+<p>From Beer’s study, we inferred that there is a link between democracy and labor force participation because through voting, women are able to advance their interests through voting. We regressed the gender inequality in the political field on the level of educational attainment in the country. The results were statistically significant, and this is in line with the current literature that asserts the link between education and gender inequality in the political field. The results were also significant for gender inequality in the political field and democracy. Amongst other reasons, one reason, might be the lack of advancement of interests through voting.</p>
+<pre class="r"><code>summary(lm(politunequal~democracy), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = politunequal ~ democracy)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -7.3753 -1.7738  0.9856  1.9856  2.7073 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 7.172396   0.023049  311.19   &lt;2e-16 ***
+## democracy   0.120291   0.003538   33.99   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.55 on 81079 degrees of freedom
+##   (8484 observations deleted due to missingness)
+## Multiple R-squared:  0.01405,    Adjusted R-squared:  0.01404 
+## F-statistic:  1156 on 1 and 81079 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>summary(lm(politunequal~education), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = politunequal ~ education)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -7.065 -1.782  1.105  2.049  2.388 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 7.555218   0.022610  334.16   &lt;2e-16 ***
+## education   0.056608   0.003663   15.46   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.586 on 86008 degrees of freedom
+##   (3555 observations deleted due to missingness)
+## Multiple R-squared:  0.002769,   Adjusted R-squared:  0.002758 
+## F-statistic: 238.8 on 1 and 86008 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>summary(lm(politunequal~educunequal), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = politunequal ~ educunequal)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -7.408 -1.408  1.092  2.092  3.093 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 6.406468   0.028899  221.68   &lt;2e-16 ***
+## educunequal 0.500456   0.009354   53.51   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.547 on 84758 degrees of freedom
+##   (4805 observations deleted due to missingness)
+## Multiple R-squared:  0.03267,    Adjusted R-squared:  0.03266 
+## F-statistic:  2863 on 1 and 84758 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>summary(lm(politunequal~democracy + education + educunequal), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = politunequal ~ democracy + education + educunequal)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -7.988 -1.546  1.011  1.852  3.824 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 5.531310   0.040098 137.944   &lt;2e-16 ***
+## democracy   0.115733   0.003522  32.858   &lt;2e-16 ***
+## education   0.036412   0.003752   9.704   &lt;2e-16 ***
+## educunequal 0.492813   0.009743  50.580   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.505 on 78740 degrees of freedom
+##   (10821 observations deleted due to missingness)
+## Multiple R-squared:  0.04831,    Adjusted R-squared:  0.04827 
+## F-statistic:  1332 on 3 and 78740 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="hypothesis-iii" class="section level2">
+<h2>Hypothesis III</h2>
+<p>Potts (2016) posits that it is the element of choice that makes people happy in liberal democracies. The equal choice offered to citizens in terms of participating in the political, social, education and employment institutions regardless of gender can have an association with the level of happiness that an individual in that country.</p>
+<p>For this hypothesis, we used the dependent variable happiness (measured by V10 - feeling of happiness) and then the independent variables of gender inequality in the political field and gender inequality in the education. The results of the regression were statistically significant which reinforces the importance of gender equality in the educational and political field.</p>
+<pre class="r"><code>summary(lm(happy~educunequal), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = happy ~ educunequal)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.8697 -0.8409  0.1495  0.1591  2.1591 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.879264   0.008309 226.170  &lt; 2e-16 ***
+## educunequal -0.009581   0.002691  -3.561  0.00037 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.7406 on 86329 degrees of freedom
+##   (3234 observations deleted due to missingness)
+## Multiple R-squared:  0.0001468,  Adjusted R-squared:  0.0001352 
+## F-statistic: 12.68 on 1 and 86329 DF,  p-value: 0.0003703</code></pre>
+<pre class="r"><code>summary(lm(happy~politunequal), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = happy ~ politunequal)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.8990 -0.8363  0.1428  0.1637  2.1637 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   1.9059478  0.0080761  236.00  &lt; 2e-16 ***
+## politunequal -0.0069605  0.0009736   -7.15 8.77e-13 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.7401 on 86087 degrees of freedom
+##   (3476 observations deleted due to missingness)
+## Multiple R-squared:  0.0005934,  Adjusted R-squared:  0.0005818 
+## F-statistic: 51.12 on 1 and 86087 DF,  p-value: 8.775e-13</code></pre>
+<pre class="r"><code>summary(lm(happy~educunequal+politunequal), data = WVS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = happy ~ educunequal + politunequal)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.9077 -0.8343  0.1454  0.1658  2.1719 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   1.920584   0.010589 181.384  &lt; 2e-16 ***
+## educunequal  -0.006117   0.002772  -2.207   0.0273 *  
+## politunequal -0.006798   0.001001  -6.793 1.11e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.7399 on 84174 degrees of freedom
+##   (5388 observations deleted due to missingness)
+## Multiple R-squared:  0.0006924,  Adjusted R-squared:  0.0006686 
+## F-statistic: 29.16 on 2 and 84174 DF,  p-value: 2.189e-13</code></pre>
+</div>
+
+<p>Copyright &copy; 2018 Amarachi Nasa-Okolie, Inc. All rights reserved. </p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
